@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Conditional fog percentages for South-Central Texas">
+		<meta name="keywords" content="Fog, EWX, Interactive">
+		<meta name="author" content="Harrison Tran">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>EWX Fog</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+		<script src="https://d3js.org/d3.v6.min.js"></script><!-- D3.js-->
+		<script src="https://d3js.org/topojson.v3.min.js"></script> <!-- TopoJSON import -->
+		<script src="script.js"></script><!--My script-->
+	</head>
+	<body>
+		<div id="container">
+			<h1>Fog in South Central Texas</h1>
+			<p>There can be plenty of fog, especially advection fog, in South Central Texas. This visualization can be used to quickly see spatial relationships between fog occurrance in the EWX CWA.</p>
+			<div id="config">
+				<div class="row">
+					<p id="config-head">View the probability (as a percentage of days) of...</p>
+					<div class="col">
+						<input type="radio" id="sel-fog" name="fog_class" value="Fog" checked>
+						<label for="sel-fog">Fog</label><br>
+						<input type="radio" id="sel-dense" name="fog_class" value="Dense">
+						<label for="sel-dense">Dense Fog</label><br>
+					</div>
+					<div class="col">
+						<label for="season">During</label>
+						<select name="season" id="season">
+							<option value="sel-ann">Annual</option>
+							<option value="sel-djf">Winter (DJF)</option>
+							<option value="sel-mam">Spring (MAM)</option>
+							<option value="sel-jja">Summer (JJA)</option>
+							<option value="sel-sib">Fall (SON)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<p>Click on an AWOS/ASOS site to lock conditions at that site. Click multiple times to toggle through conditions. <span style="color: red;">Red outlines</span> are dense fog. <span style="color: orange;">Orange outlines</span> are fog.</p>
+			<div id="plot"></div>
+			<hr>
+			<footer>
+				Plot and web page designed by Harrison Tran (<a href="mailto:harrison.tran@noaa.gov">harrison.tran@noaa.gov</a>).
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+* {
+	font-family: 'Quicksand';
+}
+
+html, body {
+	background-color: #222;
+	color: white;
+}
+
+#container {
+	width:1200px;
+	height: 100%;
+	margin:0 auto;
+	background-color: #111;
+	padding: 30px;
+}
+
+#config > .row {
+	width: 100%;
+	vertical-align: middle;
+    background: #333;
+    border: 1px solid #444;
+    overflow: hidden;
+    padding: 10px;
+}
+
+#config > .row > .col {
+    float: left;
+    width: 50%;
+}
+
+#config-head {
+	margin: 0;
+	font-weight: bold;
+}
+
+
+select {
+	font-family: 'Quicksand', sans-serif;
+	height: 3em;
+	font-weight: bold;
+	background-color: #705b1e;
+	border-radius: 10px;
+	border: none;
+	color:white;
+}
+
+/* Plot */
+#plot {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: fit-content;
+}
+
+path.state, path.county {
+	fill: rgb(30, 30, 30);
+}
+
+path.outline {
+	stroke: rgb(60, 60, 60);
+	stroke-width: 1px;
+	fill: none;
+}
+
+text.textStation {
+	fill: silver;
+	font-size: 12px;
+}
+
+text.textVal {
+	fill: white;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+circle {
+	fill-opacity: 0.6;
+}
+
+circle.hiddenCircle {
+	opacity: 0;
+}
+
+circle.site-none {
+    stroke: dimgray;
+}
+
+circle.site-dense {
+	stroke: red;
+	stroke-width: 3;
+}
+
+circle.site-fog {
+	stroke: orange;
+	stroke-width: 3;
+}
+
+hr {
+	border-color: #222;
+}
+
+
+footer {
+	color: gray;
+}
+
+footer a {
+	text-decoration: none;
+}
