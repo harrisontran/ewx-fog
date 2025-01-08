@@ -281,17 +281,25 @@ d3.csv("ewx_fog_daily.csv", d3.autoType).then(function(data) {
                 }
             )
 
-            // Plot circles
+            // Plot circles and assign functionality
             metarGroup.selectAll("circle").data(stations).join(
                 function(enter) {
                     return enter.append("circle")
                         .attr("class", "site-none")
                         .attr("cx", d => d.position[0])
                         .attr("cy", d => d.position[1])
-                        .attr("r", 8)
+                        .attr("r", 7)
                         .attr("stn", d => d.stn)
                         .attr("val", d => d.val)
                         .attr("fill", d => colorScale(d.val))
+                        .on("mouseover", function() {
+                        	d3.select(this).transition().duration(200)
+                        		.attr("r", 10)
+                        })
+                        .on("mouseout", function() {
+                        	d3.select(this).transition().duration(200)
+                        		.attr("r", 7)
+                        })
                         .on("click", function() {
                             let currClass = d3.select(this).attr("class");
                             let stn = d3.select(this).attr("stn");
